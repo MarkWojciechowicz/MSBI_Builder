@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.SqlServer.IntegrationServices.Build", "..\..\..\..\Downloads\sqlsrvintegrationsrv-89858\main\SSISMSBuild\Project\Microsoft.SqlServer.IntegrationServices.Build.csproj", "{65FD5E88-5EBF-48C7-B4AB-79D70FB7977D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.SqlServer.IntegrationServices.Build", "Microsoft.SqlServer.IntegrationServices.Build.csproj", "{65FD5E88-5EBF-48C7-B4AB-79D70FB7977D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
