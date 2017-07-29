@@ -183,13 +183,13 @@ namespace Microsoft.SqlServer.IntegrationServices.Build
 							parameter.LoadFromXML(p.GetXml(), new DefaultEvents());
 						}
 
-						// Set parameter values from configuration
-						var parameterSet = new Dictionary<string, ConfigurationSetting>();
+                        // Set parameter values from configuration
+                        var parameterSet = new Dictionary<string, ConfigurationSetting>();
 						foreach (string key in ProjectConfiguration.Options.ParameterConfigurationValues.Keys)
 						{
-							// check if it's a GUID
+                            // check if it's a GUID
 							Guid guid;
-							if (Guid.TryParse(key, out guid))
+                            if (Guid.TryParse(key, out guid))
 							{
 								var setting = ProjectConfiguration.Options.ParameterConfigurationValues[key];
 								parameterSet.Add(key, setting);

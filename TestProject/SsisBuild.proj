@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns = "http://schemas.microsoft.com/developer/msbuild/2003"
+          DefaultTargets="SSISBuild;SSISDeploy">
+  <UsingTask TaskName= "DeploymentFileCompilerTask" AssemblyFile= "..\Microsoft.SqlServer.IntegrationServices.Build\bin\Debug\Microsoft.SqlServer.IntegrationServices.Build.dll" />
+  <Target Name= "SSISBuild" Condition= "'$(SSISProj)' != ''" >
+    <PropertyGroup >
+      <SSISProjPath >$(SSISProj).dtproj</SSISProjPath>
+    </PropertyGroup>
+    <Message Text="**************Building SSIS project: $(SSISProjPath) for configuration: $(CONFIGURATION)**************" />
+    <DeploymentFileCompilerTask
+      InputProject="$(SSISProjPath)"
+	  Configuration="$(CONFIGURATION)"
+      ProtectionLevel="DontSaveSensitive">
+    </DeploymentFileCompilerTask>
+  </Target>
+
+  <UsingTask TaskName="DeployProjectToCatalogTask" AssemblyFile="..\Microsoft.SqlServer.IntegrationServices.Build\bin\Debug\Microsoft.SqlServer.IntegrationServices.Build.dll" />
+  <Target Name="SSISDeploy" Condition="'$(SSISProj)' != ''">
+    <Message Text="**************Publishing SSIS project: $(SSISProj) to: $(SSISServer) to folder: $(FolderName)**************" />
+    <PropertyGroup>
+      <ISPac>bin\$(CONFIGURATION)\$(SSISProj).ispac</ISPac>
+    </PropertyGroup>
+    <DeployProjectToCatalogTask
+          IsPacFiles="$(ISPac)"
+          SsisInstance="$(SSISServer)"
+          SsisFolder="$(FolderName)"
+          CreateFolder="true"/>
+  </Target>
+</Project>
