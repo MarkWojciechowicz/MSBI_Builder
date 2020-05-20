@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml.Serialization;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
+using Microsoft.SqlServer.Management.Dmf;
 using Microsoft.SqlServer.Management.IntegrationServices;
 
 namespace Microsoft.SqlServer.IntegrationServices.Build
@@ -133,12 +134,13 @@ namespace Microsoft.SqlServer.IntegrationServices.Build
             byte[] bytes = File.ReadAllBytes(ispacFile);
             string projectName = Path.GetFileNameWithoutExtension(ispacFile);
             var results = catalogFolder.DeployProject(projectName, bytes);
-            foreach(OperationMessage message in results.Messages)
+            DateTime messageDate = results.CreatedTime.GetValueOrDefault(DateTime.Now).DateTime;
+            foreach (var message in results.GetLatestMessages(messageDate))
             {
                 Log.LogMessage(message.Message);
             }
 
-            if( results.Status != Operation.ServerOperationStatus.Success)
+            if ( results.Status != Operation.ServerOperationStatus.Success)
             {
                 throw new Exception($"Deployment failed for project: '{projectName}");
             }

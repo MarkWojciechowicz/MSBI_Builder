@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
   <SSIS:Parameter
     SSIS:Name="TestInt">
@@ -38,7 +38,7 @@
         SSIS:Name="Sensitive">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAl6JGqaPKi02qGbuwgRoQewAAAAACAAAAAAADZgAAwAAAABAAAACrDOfPe+HAmOk5MxFKPk3TAAAAAASAAACgAAAAEAAAALNTvw4J92lkWJtjiO7tpYh4AAAAQ93xzohGbwuw59KPwpl1oX4Iq2lylwVgw5/1eTuA8XRRdWavu23s4I8MVxboUF5JZA2PdN+pK7f5k0cNs6AjCn/TjQEJHsDUS2aKFZNKXx3+bVfsuJ/yaFXOCqZAdSOjSsv3mpH5nQbbgW9c70SWqRAG13Snhu+MFAAAAAL+0dkcDRxXmBS/NhE3kaHHLpLT</SSIS:Property>
+        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPV4gQgddU0W+cXm0jqADZwAAAAACAAAAAAADZgAAwAAAABAAAAD9DWd3lujHfCnEE/h9vyAQAAAAAASAAACgAAAAEAAAABE0NYBbog1c9EFaWJgHCmF4AAAAX+XudncON4UBcWwhhAPbSLdBOk/slYm1kHMhzJtAzIMlpK1Gq8Vu86OUxjO6n0lw5nfBYVmM8dP4PVAYQbviT5jWK6L9m9C5GhG8thF8anZxK5cVszDxV08X8YjDBlM8/UeTdupo4uk+o7SU0fW2Efq3I4oxacpyFAAAAAthnPmc8gyNm2zN4dfjmejQ1T2U</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

@@ -79,7 +79,7 @@ namespace Microsoft.SqServer.IntegrationServices.Build.Tests
         public void DeployProjectToCatalogTask_Execute_DeploysProject()
         {
             //act
-            string args = $@"SsisBuild.proj /t:SSISDeploy /p:SSISProj=TestSsisProject,Configuration=Development,ProjectName=TestSsisProject,SSISServer={ssisServer},FolderName=NewFolder";
+            string args = $@"SsisBuild.proj /t:SSISDeploy /p:SSISProj=TestSsisProject,Configuration=Development,ProjectName=TestSsisProject,SSISServer={ssisServer},FolderName=NewFolder,SsisVersion=2017";
             RunDeployment(args);
 
             //Assert
